@@ -1,0 +1,51 @@
+# Textmate
+export PATH="$HOME/bin:/usr/local/bin:/Applications/Shoes.app/Contents/MacOS:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/opt/subversion/bin:$PATH" 
+
+# ENV VARIABLES
+export RDOCOPT="-S -f html -T hanna"
+export SVN_EDITOR="mate"
+export MAGICK_HOME="$HOME/ImageMagick-6.5.0"
+export PATH="$MAGICK_HOME/bin:$PATH"
+export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
+
+# MacPorts Installer addition on 2009-04-08_at_09:04:53: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+
+# MacPorts Installer addition on 2009-04-08_at_09:04:53: adding an appropriate MANPATH variable for use with MacPorts.
+export MANPATH=/opt/local/share/man:$MANPATH
+# Finished adapting your MANPATH environment variable for use with MacPorts.
+
+# == From JFerris
+# completion
+autoload -U compinit
+compinit
+
+# automatically enter directories without cd
+setopt auto_cd
+
+export EDITOR=mate
+
+# aliases
+if [ -e "$HOME/.aliases" ]; then
+  source "$HOME/.aliases"
+fi
+
+# vi mode
+bindkey -v
+
+# use incremental search
+bindkey ^R history-incremental-search-backward
+
+# expand functions in the prompt
+setopt prompt_subst
+
+# prompt
+export PS1='$(git_prompt_info)[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[green]%}%2c%{$reset_color%}] '
+
+# ignore duplicate history entries
+setopt histignoredups
+
+# keep more history
+export HISTSIZE=200
