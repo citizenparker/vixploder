@@ -15,12 +15,19 @@ alias g='git'
 
 # Common command aliases
 alias vil='vi $_'
+alias ls='ls -F'
+alias la='ls -la'
+alias resource='source ~/.zshrc'
 
 # Rails
 alias ss='./script/server --debugger'
 alias sas='./script/autospec'
 alias sc='./script/console'
 alias sg='./script/generate'
+alias rdb='rake db:migrate'
+alias log='rake log:clear; tail -f log/development.log'
+alias restart='touch tmp/restart.txt'
+alias kill_ruby="killall -9 ruby"
 
 # Textmate alias that will be rmeoved after we determine that it
 # is inferior to vim/vi
