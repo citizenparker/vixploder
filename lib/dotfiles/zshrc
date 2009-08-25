@@ -12,7 +12,7 @@ export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
 export MANPATH=/opt/local/share/man:$MANPATH
 # Finished adapting your MANPATH environment variable for use with MacPorts.
 
-# == From JFerris
+# == Initial template From JFerris
 # completion
 autoload -U compinit
 compinit
