@@ -1,9 +1,8 @@
-# Textmate
-export PATH="$HOME/bin:/usr/local/bin:/Applications/Shoes.app/Contents/MacOS:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/opt/subversion/bin:$PATH" 
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/Applications/Shoes.app/Contents/MacOS:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/opt/subversion/bin:$PATH" 
 
 # ENV VARIABLES
 export RDOCOPT="-S -f html -T hanna"
-export SVN_EDITOR="mate"
+export SVN_EDITOR="mvim"
 export MAGICK_HOME="$HOME/ImageMagick-6.5.0"
 export PATH="$MAGICK_HOME/bin:$PATH"
 export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
@@ -20,7 +19,7 @@ compinit
 # automatically enter directories without cd
 setopt auto_cd
 
-export EDITOR=mate
+export EDITOR='mvim'
 
 # aliases
 if [ -e "$HOME/.aliases" ]; then
