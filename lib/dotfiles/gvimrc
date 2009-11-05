@@ -7,7 +7,7 @@
 "set columns=150
 
 " Window size
-set winwidth=85
+set winwidth=60
 let g:halfsize = 90
 let g:fullsize = 180
 set lines=50

@@ -135,6 +135,9 @@ vmap D y'>p
 " For Haml
 au! BufRead,BufNewFile *.haml         setfiletype haml
 
+" For Haml
+au! BufRead,BufNewFile *.prawn         setfiletype ruby
+
 " No Help, please
 nmap <F1> <Esc>
 
