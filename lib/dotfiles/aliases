@@ -20,6 +20,7 @@ alias la='ls -la'
 alias resource='source ~/.zshrc'
 alias ce='cd ~/src/vixploder; mvim'
 alias la='ls -lah'
+alias sgi='sudo gem install --no-ri'
 # Rails
 alias ss='./script/server --debugger'
 alias sas='./script/autospec'
@@ -29,6 +30,7 @@ alias rdb='rake db:migrate'
 alias log='rake log:clear; tail -f log/development.log'
 alias restart='touch tmp/restart.txt'
 alias kill_ruby="killall -9 ruby"
+
 # Autotest
 alias autos='AUTOFEATURE=true autospec'
 # Textmate alias that will be rmeoved after we determine that it

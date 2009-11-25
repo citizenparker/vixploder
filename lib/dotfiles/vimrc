@@ -105,11 +105,10 @@ map <Leader>sv :RSview
 map <Leader>su :RSunittest 
 map <Leader>sf :RSfunctionaltest 
 map <leader>t :FuzzyFinderTextMate <CR>
-map <leader>ra :RunAllRubyTests <CR>
 map <leader>rs :RunRubyFocusedUnitTest <CR>
 map <leader>rc :RunRubyFocusedContext <CR>
+map <leader>ra :RunAllRubyTests <CR>
 map <leader>rr :RunLastRubyTest <CR>
-
 
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
@@ -136,6 +135,9 @@ vmap D y'>p
 " For Haml
 au! BufRead,BufNewFile *.haml         setfiletype haml
 
+" For Haml
+au! BufRead,BufNewFile *.prawn         setfiletype ruby
+
 " No Help, please
 nmap <F1> <Esc>
 
@@ -143,7 +145,8 @@ nmap <F1> <Esc>
 imap <C-F> <C-R>=expand("%")<CR>
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·
+set list 
+set listchars=tab:>-,trail:.
 
 " Edit routes
 command! Rroutes :e config/routes.rb
