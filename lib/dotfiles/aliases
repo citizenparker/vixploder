@@ -8,6 +8,7 @@ alias gl='git pull'
 alias gp='git push'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
+alias gco='git checkout'
 alias gb='git branch'
 alias gba='git branch -a'
 alias ga='git add'
@@ -27,15 +28,14 @@ alias sas='./script/autospec'
 alias sc='./script/console'
 alias sg='./script/generate'
 alias rdb='rake db:migrate'
-alias log='rake log:clear; tail -f log/development.log'
+alias ld='tail -f log/development.log'
+alias lt='tail -f log/test.log'
+
 alias restart='touch tmp/restart.txt'
 alias kill_ruby="killall -9 ruby"
 
 # Autotest
 alias autos='AUTOFEATURE=true autospec'
-# Textmate alias that will be rmeoved after we determine that it
-# is inferior to vim/vi
-alias mr='mate app config db features lib public test spec vendor/plugins vendor/gems'
 
 # Load ~/.local_aliases file if it exists & is readable
 [ -r ~/.local_aliases ] && . ~/.local_aliases
