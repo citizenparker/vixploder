@@ -2,6 +2,8 @@
 require 'rubygems'
 require 'wirble'
 require 'pp'
+require 'boson'
+Boson.start
 
 Wirble.init
 Wirble.colorize
