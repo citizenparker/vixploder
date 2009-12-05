@@ -1,3 +1,4 @@
+" Plugin from Drew Olson -- http://github.com/drewolson/ruby_focused_unit_test_vim
 if !has("ruby")
   finish
 end
