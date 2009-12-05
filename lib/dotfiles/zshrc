@@ -1,10 +1,8 @@
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/Applications/Shoes.app/Contents/MacOS:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/opt/subversion/bin:$PATH" 
+export PATH="$HOME/bin:/Applications/Shoes.app/Contents/MacOS:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/opt/subversion/bin:$PATH" 
 
 # ENV VARIABLES
 export RDOCOPT="-S -f html -T hanna"
 export SVN_EDITOR="mvim"
-export MAGICK_HOME="$HOME/ImageMagick-6.5.0"
-export PATH="$MAGICK_HOME/bin:$PATH"
 export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
 
 # MacPorts Installer addition on 2009-04-08_at_09:04:53: adding an appropriate MANPATH variable for use with MacPorts.
