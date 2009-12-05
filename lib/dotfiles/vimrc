@@ -260,6 +260,10 @@ abbreviate lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestib
 "Typing 'hh' will give you a '=>'
 abbreviate hh =>
 
+
+" MISC COMMANDS
+command Wsudo w !sudo tee %
+
 "-------- Local Overrides
 "If you have options you'd like to override locally for
 "some reason (don't want to store something in a
