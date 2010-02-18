@@ -64,14 +64,7 @@ else
 endif " has("autocmd")
 
 if has("folding")
-  set foldenable
-  set foldmethod=syntax
-  set foldlevel=1
-  set foldnestmax=2
-  set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-
-  " automatically open folds at the starting cursor position
-  " autocmd BufReadPost .foldo!
+  set nofoldenable
 endif
 
 " Softtabs, 2 spaces
@@ -131,12 +124,6 @@ imap <Tab> <C-N>
 " Duplicate a selection
 " Visual mode: D
 vmap D y'>p
-
-" For Haml
-au! BufRead,BufNewFile *.haml         setfiletype haml
-
-" For Haml
-au! BufRead,BufNewFile *.prawn         setfiletype ruby
 
 " No Help, please
 nmap <F1> <Esc>
@@ -256,10 +243,6 @@ autocmd! BufWritePost .vimrc source %
 "-------- Abbreviations
 "Some lorem ispum text
 abbreviate lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum hendrerit ante. Phasellus vitae enim id erat fringilla fermentum.  Pellentesque tellus. Cras eros magna, pretium ac, tincidunt id, tincidunt eget, mi. Fusce tristique sollicitudin eros. Nam augue nisi, volutpat non, cursus a, aliquam ac, magna. Sed rhoncus, ipsum vitae semper ultrices, ante nunc faucibus nunc, sed iaculis elit metus condimentum turpis. Suspendisse suscipit. Nulla eget nulla. Aliquam varius sem quis tortor. Proin eu dolor a lacus lobortis luctus. Phasellus interdum. Maecenas quis sem. Nulla facilisi.
-
-"Typing 'hh' will give you a '=>'
-abbreviate hh =>
-
 
 " MISC COMMANDS
 command Wsudo w !sudo tee %

@@ -1,7 +1,9 @@
 au! BufRead,BufNewFile *.haml         setfiletype haml
 au! BufRead,BufNewFile *.sass         setfiletype sass
-"au BufAdd,BufNewFile *                nested tab sball
+au! BufRead,BufNewFile *.prawn        setfiletype ruby
 
+" For LPP Compass .rules
+au! BufRead,BufNewFile *.rules        set filetype=ruby
 
 " markdown filetype file
 if exists("did\_load\_filetypes")
