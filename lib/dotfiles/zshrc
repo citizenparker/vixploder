@@ -1,5 +1,6 @@
 # ENV VARIABLES
 export SVN_EDITOR="mvim"
+export ERL_LIBS=/opt/erlang-libs
 
 # == Initial template From JFerris
 # completion
