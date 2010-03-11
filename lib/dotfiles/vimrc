@@ -57,6 +57,12 @@ if has("autocmd")
 
   augroup END
 
+  "-------- Autocommands
+  autocmd! BufWritePost .vimrc source %
+
+  "------- Rails autocmds
+  autocmd User Rails Rnavcommand factory test/factories -suffix=_factory.rb
+
 else
 
   set autoindent		" always set autoindenting on
@@ -189,9 +195,13 @@ noremap ? :nohlsearch<CR>
 "Set up TextMate-like cmd-T file searching using <leader>-f ('backslash'-f)
 "noremap <leader>f :FuzzyFinderTextMate<CR>
 
+"-------- NERDTree settings
 "Toggle NERDTree window using F3 key
 noremap <F3> :NERDTreeToggle<CR>
 noremap <C-d> :NERDTreeToggle<CR>
+
+"Ignore files
+let NERDTreeIgnore=['\.beam$']
 
 
 "-------- FuzzyFinderTextmate plugin settings
@@ -236,16 +246,12 @@ noremap tc :tabclose<CR>
 "Create new tab with Ctl+t
 noremap tt :tabnew<CR>
 
-
-"-------- Autocommands
-autocmd! BufWritePost .vimrc source %
-
 "-------- Abbreviations
 "Some lorem ispum text
 abbreviate lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum hendrerit ante. Phasellus vitae enim id erat fringilla fermentum.  Pellentesque tellus. Cras eros magna, pretium ac, tincidunt id, tincidunt eget, mi. Fusce tristique sollicitudin eros. Nam augue nisi, volutpat non, cursus a, aliquam ac, magna. Sed rhoncus, ipsum vitae semper ultrices, ante nunc faucibus nunc, sed iaculis elit metus condimentum turpis. Suspendisse suscipit. Nulla eget nulla. Aliquam varius sem quis tortor. Proin eu dolor a lacus lobortis luctus. Phasellus interdum. Maecenas quis sem. Nulla facilisi.
 
 " MISC COMMANDS
-command Wsudo w !sudo tee %
+command! Wsudo w !sudo tee %
 
 "-------- Local Overrides
 "If you have options you'd like to override locally for
