@@ -1,11 +1,20 @@
 require 'rubygems'
-require 'wirble'
 require 'pp'
-require 'boson'
-Boson.start
 
-Wirble.init
-Wirble.colorize
+
+begin
+  require 'wirble'
+  Wirble.init
+  Wirble.colorize
+rescue
+end
+
+begin
+  require 'boson'
+  Boson.start
+  Hirb.enable
+rescue
+end
 
 # print SQL to STDOUT
 if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
