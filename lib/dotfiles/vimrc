@@ -59,8 +59,11 @@ if has("autocmd")
 
   "-------- Autocommands
   autocmd! BufWritePost .vimrc source %
+  ": save on blur
+  autocmd FocusLost * :wa
 
   "------- Rails autocmds
+  ": Rfactory
   autocmd User Rails Rnavcommand factory test/factories -suffix=_factory.rb
 
 else
