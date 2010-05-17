@@ -60,11 +60,13 @@ if has("autocmd")
   "-------- Autocommands
   autocmd! BufWritePost .vimrc source %
   ": save on blur
-  autocmd FocusLost * :wa
+  autocmd FocusLost *.rb :wa
 
   "------- Rails autocmds
   ": Rfactory
   autocmd User Rails Rnavcommand factory test/factories -suffix=_factory.rb
+  autocmd User Rails Rnavcommand feature features -suffix=.feature
+  autocmd User Rails Rnavcommand steps features/step_definitions -suffix=_steps.rb
 
 else
 
@@ -73,7 +75,11 @@ else
 endif " has("autocmd")
 
 if has("folding")
-  set nofoldenable
+  set foldenable
+  set foldmethod=syntax
+  set foldlevel=999
+  set foldnestmax=999
+  set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\'.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
 endif
 
 " Softtabs, 2 spaces
@@ -106,7 +112,7 @@ map <Leader>sc :RScontroller
 map <Leader>sv :RSview 
 map <Leader>su :RSunittest 
 map <Leader>sf :RSfunctionaltest 
-map <leader>t :FuzzyFinderTextMate <CR>
+"map <leader>t :PeepOpen <CR>
 map <leader>rs :RunRubyFocusedUnitTest <CR>
 map <leader>rc :RunRubyFocusedContext <CR>
 map <leader>ra :RunAllRubyTests <CR>
@@ -137,8 +143,9 @@ vmap D y'>p
 " No Help, please
 nmap <F1> <Esc>
 
-" Press ^F from insert mode to insert the current file name
-imap <C-F> <C-R>=expand("%")<CR>
+" Emacs 
+"map! <C-A> <Home>
+"map! <C-E> <End>
 
 " Display extra whitespace
 set list 
@@ -192,16 +199,16 @@ noremap <C-J> <C-W>j<C-W>_
 "Switch to the next "higher" windows with <C-J>
 noremap <C-K> <C-W>k<C-W>_
 
-"Hide the highlighted search results with "?"
-noremap ? :nohlsearch<CR>
+"Hide the highlighted search results with <C-/>
+"noremap <C-/> :nohlsearch<CR>
 
 "Set up TextMate-like cmd-T file searching using <leader>-f ('backslash'-f)
-"noremap <leader>f :FuzzyFinderTextMate<CR>
+noremap <leader>t :FuzzyFinderTextMate<CR>
 
 "-------- NERDTree settings
 "Toggle NERDTree window using F3 key
-noremap <F3> :NERDTreeToggle<CR>
-noremap <C-d> :NERDTreeToggle<CR>
+"noremap <F3> :NERDTreeToggle<CR>
+noremap <C-s> :NERDTreeToggle<CR>
 
 "Ignore files
 let NERDTreeIgnore=['\.beam$']
@@ -222,7 +229,7 @@ endif
 
 "-------- Most Recently Used File (MRU) plugin mapping & config
 "Open Most Recently Used window with Ctl+o
-noremap <C-o> :MRU<CR>
+"noremap <C-o> :MRU<CR>
 
 "Set max entries in MRU option window
 let MRU_Max_Entries = 30
@@ -235,12 +242,13 @@ let MRU_Max_Entries = 30
 "   user = <your username>
 "   token = <your account token>
 " Set up clipboard to use OS X's 'pbcopy' command
-if s:on_mac
-  let g:gist_clip_command = 'pbcopy'
-elseif s:on_linux
-  let g:gist_clip_command = 'xclip -selection clipboard'
-endif
+"if s:on_mac
+  "let g:gist_clip_command = 'pbcopy'
+"elseif s:on_linux
+  "let g:gist_clip_command = 'xclip -selection clipboard'
+"endif
 
+let g:gist_clip_command = 'pbcopy'
 
 "-------- Tab mappings
 "Close tabs with tc
