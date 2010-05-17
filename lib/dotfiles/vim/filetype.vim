@@ -1,6 +1,7 @@
 au! BufRead,BufNewFile *.haml         setfiletype haml
 au! BufRead,BufNewFile *.sass         setfiletype sass
 au! BufRead,BufNewFile *.prawn        setfiletype ruby
+au! BufRead,BufNewFile *.json         setfiletype json 
 
 " For LPP Compass .rules
 au! BufRead,BufNewFile *.rules        set filetype=ruby
