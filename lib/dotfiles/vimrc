@@ -59,8 +59,6 @@ if has("autocmd")
 
   "-------- Autocommands
   autocmd! BufWritePost .vimrc source %
-  ": save on blur
-  autocmd FocusLost *.rb :wa
 
   "------- Rails autocmds
   ": Rfactory
@@ -90,8 +88,12 @@ set expandtab
 " Always display the status line
 set laststatus=2
 
-" \ is the leader character
-let mapleader = "\\"
+"-------- Mappings
+"Set the map leader...this is the default character, just put it in here
+" to be explicit. Mappings which include "<leader>" would start with this
+" charachter. For example. "map <leader>f <some_command>" would create a mapping for
+" ,-f (comma-f) to '<some_command>'
+let mapleader = ","
 
 " Edit the README_FOR_APP (makes :R commands work)
 map <Leader>R :e doc/README_FOR_APP<CR>
@@ -101,22 +103,26 @@ map <Leader>m :Rmodel
 map <Leader>c :Rcontroller 
 map <Leader>v :Rview 
 map <Leader>u :Runittest 
-map <Leader>f :Rfunctionaltest 
+map <Leader>f :Rfeature
 map <Leader>tm :RTmodel 
 map <Leader>tc :RTcontroller 
 map <Leader>tv :RTview 
 map <Leader>tu :RTunittest 
-map <Leader>tf :RTfunctionaltest 
+map <Leader>tf :RTfeature
 map <Leader>sm :RSmodel 
 map <Leader>sc :RScontroller 
 map <Leader>sv :RSview 
 map <Leader>su :RSunittest 
-map <Leader>sf :RSfunctionaltest 
-"map <leader>t :PeepOpen <CR>
-map <leader>rs :RunRubyFocusedUnitTest <CR>
-map <leader>rc :RunRubyFocusedContext <CR>
-map <leader>ra :RunAllRubyTests <CR>
-map <leader>rr :RunLastRubyTest <CR>
+map <Leader>sf :RSfeature
+map <Leader>vm :RVmodel 
+map <Leader>vc :RVcontroller 
+map <Leader>vv :RVview 
+map <Leader>vu :RVunittest 
+map <Leader>vf :RVfeature 
+map <Leader>qq :sp ~/.vimrc<CR><C-W>_ 
+
+"Set up TextMate-like cmd-T file searching using <leader>-t ('comma'-t)
+noremap <leader>t :FuzzyFinderTextMate<CR>
 
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
@@ -186,24 +192,11 @@ set wildmode=list:longest,list:full
 set ignorecase
 set smartcase
 
-"-------- Mappings
-"Set the map leader...this is the default character, just put it in here
-" to be explicit. Mappings which include "<leader>" would start with this
-" charachter. For example. "map <leader>f <some_command>" would create a mapping for
-" \-f (backslash-f) to '<some_command>'
-let mapleader='\'
-
 "Switch to the next "higher" windows with <C-K>
 noremap <C-J> <C-W>j<C-W>_
 
 "Switch to the next "higher" windows with <C-J>
 noremap <C-K> <C-W>k<C-W>_
-
-"Hide the highlighted search results with <C-/>
-"noremap <C-/> :nohlsearch<CR>
-
-"Set up TextMate-like cmd-T file searching using <leader>-f ('backslash'-f)
-noremap <leader>t :FuzzyFinderTextMate<CR>
 
 "-------- NERDTree settings
 "Toggle NERDTree window using F3 key
