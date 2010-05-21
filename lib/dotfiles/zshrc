@@ -1,8 +1,9 @@
 # ENV VARIABLES
+export PATH="/usr/local/bin:$PATH"
 export SVN_EDITOR="mvim"
 export ERL_LIBS=/opt/erlang-libs
+export RDOCOPT="-S -f html -T hanna"
 
-# == Initial template From JFerris
 # completion
 autoload -U compinit
 compinit
