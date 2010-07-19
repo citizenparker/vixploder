@@ -10,6 +10,7 @@
 	branch = auto
 [core]
 	excludesfile = ~/.gitignore
+	autocrlf = true
 [alias]
   c = commit -m
   a = add
@@ -20,3 +21,5 @@
   plre = pull --rebase
   st = status
   out = log origin..HEAD
+[branch]
+	autosetupmerge = true
