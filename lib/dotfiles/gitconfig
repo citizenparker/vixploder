@@ -10,7 +10,7 @@
 	branch = auto
 [core]
 	excludesfile = ~/.gitignore
-	autocrlf = true
+	autocrlf = input
 [alias]
   c = commit -m
   a = add
