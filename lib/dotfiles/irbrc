@@ -12,7 +12,11 @@ end
 begin
   require 'boson'
   Boson.start
-  Hirb.enable
+rescue
+end
+
+begin
+  require 'ap'
 rescue
 end
 
