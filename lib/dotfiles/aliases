@@ -24,7 +24,7 @@ alias la='ls -lah'
 alias sgi='sudo gem install --no-ri'
 alias restart='touch tmp/restart.txt'
 alias kill_ruby='killall -9 ruby'
-alias mvim='mvim 2>/dev/null'
+alias mvim='~/tools/mvim'
 # Rails
 alias r='rails'
 alias ss='./script/server --debugger'
@@ -36,6 +36,8 @@ alias rg='rails generate'
 alias rdb='rake db:migrate'
 alias ld='tail -f log/development.log'
 alias lt='tail -f log/test.log'
+alias pt='rake gc:twitter parallel:spec\[2\] parallel:features\[2\]'
+alias pp='rake parallel:recreate CORES=2'
 
 # Autotest
 alias autos='AUTOFEATURE=true autospec'
