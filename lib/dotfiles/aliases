@@ -36,7 +36,7 @@ alias rg='rails generate'
 alias rdb='rake db:migrate'
 alias ld='tail -f log/development.log'
 alias lt='tail -f log/test.log'
-alias pt='rake gc:twitter parallel:spec\[2\] parallel:features\[2\]'
+alias pt='rake gc:twitter parallel:spec\[2\]; rake gc:twitter parallel:features\[2\]'
 alias pp='rake parallel:recreate CORES=2'
 
 # Autotest

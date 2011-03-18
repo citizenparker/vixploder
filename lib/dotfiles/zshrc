@@ -7,24 +7,21 @@ export CLASSPATH="$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.1.0/clojure-con
 autoload -U compinit
 compinit
 
-export EDITOR='mvim'
+export EDITOR='mate'
 
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
-# use vi
-bindkey -v
+# DON'T use mvim
+bindkey -e
 
 # use incremental search
 bindkey ^R history-incremental-search-backward
 
 # expand functions in the prompt
 setopt prompt_subst
-
-# prompt
-export PS1='$(git_prompt_info)[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[green]%}%2c%{$reset_color%}] '
 
 # ignore duplicate history entries
 setopt histignoredups
@@ -35,3 +32,14 @@ export HISTSIZE=200
 # rvm-install added line:
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
+# this tests for the presence of rvm 
+# if its loaded, it'll add the prompt
+function rvm_prompt_info {
+  ruby_version=$(~/.rvm/bin/rvm-prompt)
+  if [ -n "$ruby_version" ]; then
+    echo "[%{$fg_bold[grey]%}$ruby_version%{$reset_color%}]"
+  fi
+}
+
+# prompt
+export PS1='$(git_prompt_info)$(rvm_prompt_info)[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[green]%}%2c%{$reset_color%}] '
