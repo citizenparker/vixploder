@@ -3,6 +3,7 @@ export PATH="/usr/local/bin:/usr/local/mysql/bin:$PATH"
 export SVN_EDITOR="mvim"
 export RDOCOPT="-S -f html -T hanna"
 export CLASSPATH="$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.1.0/clojure-contrib.jar"
+export NODE_PATH="$NODE_PATH:/usr/local/lib/node"
 # completion
 autoload -U compinit
 compinit

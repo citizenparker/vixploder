@@ -7,8 +7,27 @@ let s:platform = system("uname")
 let s:on_linux = s:platform =~? "linux"
 let s:on_mac   = has('macunix') || s:platform =~? 'Darwin'
 
-" TPope's pathogem for plugin loading
-call pathogen#runtime_append_all_bundles()
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+Bundle 'L9'
+
+Bundle 'FuzzyFinder'
+Bundle 'rails.vim'
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'railscasts'
+Bundle 'VimClojure'
+Bundle 'ack.vim'
+Bundle 'command-t'
+Bundle 'cucumber.zip'
+Bundle 'mru.vim'
+
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -170,7 +189,7 @@ if executable("ack")
 endif
 
 " Color scheme
-colorscheme vividchalk
+colorscheme railscasts
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 

@@ -24,3 +24,6 @@
 	cp = cherry-pick
 [branch]
 	autosetupmerge = true
+[github]
+	user = citizenparker
+	token = d02ba8589036913d8be739be3ef74a57
