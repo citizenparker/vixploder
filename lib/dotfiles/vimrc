@@ -17,7 +17,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'L9'
 
-Bundle 'FuzzyFinder'
+Bundle 'comments.vim'
 Bundle 'rails.vim'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -27,6 +27,7 @@ Bundle 'ack.vim'
 Bundle 'command-t'
 Bundle 'cucumber.zip'
 Bundle 'mru.vim'
+Bundle 'The-NERD-tree'
 
 
 " allow backspacing over everything in insert mode
@@ -156,9 +157,6 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
-" Maps autocomplete to tab
-imap <Tab> <C-N>
-
 " Duplicate a selection
 " Visual mode: D
 vmap D y'>p
@@ -246,6 +244,10 @@ let MRU_Max_Entries = 30
 "endif
 
 let g:gist_clip_command = 'pbcopy'
+
+"Some settings for VimClojure - see http://www.duenas.at/new_homepage/vimclojure
+let vimclojure#HighlightBuiltins   = 1
+let vimclojure#ParenRainbow  = 1
 
 "-------- Tab mappings
 "Close tabs with tc
