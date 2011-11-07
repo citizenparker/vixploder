@@ -20,15 +20,15 @@ Bundle 'L9'
 Bundle 'comments.vim'
 Bundle 'rails.vim'
 " non github repos
-Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'railscasts'
 Bundle 'VimClojure'
 Bundle 'ack.vim'
-Bundle 'command-t'
 Bundle 'cucumber.zip'
 Bundle 'mru.vim'
 Bundle 'The-NERD-tree'
-
+Bundle 'camelcasemotion'
+Bundle 'fugitive.vim'
+Bundle 'https://github.com/jpalardy/vim-slime.git'
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
