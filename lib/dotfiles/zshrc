@@ -1,6 +1,6 @@
 # ENV VARIABLES
 export M2_HOME="/usr/local/Cellar/maven/3.0.3/libexec"
-export PATH="/usr/local/bin:/usr/local/mysql/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/mysql/bin:$HOME/bin:$PATH"
 export SVN_EDITOR="mvim"
 export RDOCOPT="-S -f html -T hanna"
 export CLASSPATH="$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.1.0/clojure-contrib.jar"

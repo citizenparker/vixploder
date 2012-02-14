@@ -21,9 +21,9 @@ Bundle 'comments.vim'
 Bundle 'rails.vim'
 " non github repos
 Bundle 'railscasts'
-Bundle 'VimClojure'
 Bundle 'ack.vim'
 Bundle 'cucumber.zip'
+Bundle 'VimClojure'
 Bundle 'mru.vim'
 Bundle 'The-NERD-tree'
 Bundle 'camelcasemotion'
@@ -248,6 +248,7 @@ let g:gist_clip_command = 'pbcopy'
 "Some settings for VimClojure - see http://www.duenas.at/new_homepage/vimclojure
 let vimclojure#HighlightBuiltins   = 1
 let vimclojure#ParenRainbow  = 1
+au BufNewFile,BufRead *.cljs setf clojure
 
 "-------- Tab mappings
 "Close tabs with tc
