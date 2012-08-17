@@ -19,6 +19,7 @@ Bundle 'L9'
 
 Bundle 'comments.vim'
 Bundle 'rails.vim'
+Bundle 'ctrlp.vim'
 " non github repos
 Bundle 'railscasts'
 Bundle 'ack.vim'

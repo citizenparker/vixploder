@@ -1,6 +1,6 @@
 # ENV VARIABLES
 export M2_HOME="/usr/local/Cellar/maven/3.0.3/libexec"
-export PATH="/usr/local/bin:/usr/local/mysql/bin:$HOME/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/mysql/bin:/Volumes/Groupon/roller_tools/bin:$HOME/bin:$PATH"
 export SVN_EDITOR="mvim"
 export RDOCOPT="-S -f html -T hanna"
 export CLASSPATH="$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.1.0/clojure-contrib.jar"
@@ -9,12 +9,18 @@ export RUBY_HEAP_MIN_SLOTS=500000
 export RUBY_HEAP_SLOTS_INCREMENT=250000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=50000000
+export AWS_CREDENTIAL_FILE=/Volumes/Groupon/aws.sparker.creds
+export HADOOP_HOME=/usr/local/hadoop
+export HIVE_HOME=/usr/local/hive
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$HADOOP_HOME/bin:$HIVE_HOME/bin:$PATH
 
 # completion
 autoload -U compinit
 compinit
 
-export EDITOR='mate'
+# export EDITOR='mate'
+export EDITOR='vim'
 
 # aliases
 if [ -e "$HOME/.aliases" ]; then

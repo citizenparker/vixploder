@@ -26,6 +26,7 @@ alias restart='touch tmp/restart.txt'
 alias kill_ruby='killall -9 ruby'
 alias mvim='~/tools/mvim'
 alias gitx='~/tools/gitx'
+alias light='~/tools/ltable'
 # Rails
 alias r='rails'
 alias ss='./script/server --debugger'
